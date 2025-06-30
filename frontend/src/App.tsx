@@ -31,6 +31,7 @@ const App: React.FC = () => {
         const data: WSMessage = JSON.parse(event.data);
         handleWSMessage(data);
       } catch (e) {
+        console.error('Failed to parse WebSocket message:', e);
         setError('Invalid message from server');
       }
     };
